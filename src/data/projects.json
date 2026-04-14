@@ -1,0 +1,24 @@
+[
+  {
+    "id": "waraqa",
+    "title": "Waraqa",
+    "subtitle": "Egyptian Sketchbook E-Commerce Platform",
+    "description": "A full-featured e-commerce platform for selling premium sketchbooks across Egypt. Built with Next.js, Supabase, and Tailwind CSS. Includes shopping cart, checkout with 4 payment methods (Cash on Delivery, InstaPay, Fawry, Vodafone Cash), user authentication, admin dashboard with analytics, and full Arabic/English support.",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
+    "tags": ["Next.js", "Supabase", "Tailwind CSS", "TypeScript", "E-Commerce"],
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "link": "#"
+  },
+  {
+    "id": "clinic-pitch",
+    "title": "Clinic Digital Pitch Deck",
+    "subtitle": "Professional Website Proposal for Egyptian Clinics",
+    "description": "A persuasive, professionally designed pitch presentation targeting Egyptian clinic owners. Features a risk-free offer model (build first, pay only if satisfied), complete with statistics, service breakdown, and a clear 3-step process. Designed with a clean blue medical theme.",
+    "image": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&h=600&fit=crop",
+    "tags": ["Web Design", "Marketing", "Business Strategy", "Presentation"],
+    "year": "2026",
+    "role": "Designer & Strategist",
+    "link": "#"
+  }
+]

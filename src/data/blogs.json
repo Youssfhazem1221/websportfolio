@@ -1,0 +1,248 @@
+[
+  {
+    "id": "why-every-egyptian-clinic-needs-a-website",
+    "title": "Why Every Egyptian Clinic Needs a Website in 2025",
+    "excerpt": "Most clinic owners in Egypt still rely on word-of-mouth and social media. Here's why that's costing them patients — and what a simple website can fix.",
+    "date": "April 10, 2025",
+    "readTime": "5 min read",
+    "tags": ["Business", "Healthcare", "Egypt"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "I've had this conversation more times than I can count. I sit down with a clinic owner in Cairo or Alexandria, and when I bring up building a website, they give me that look — the one that says 'why would I need that when I have a Facebook page?'"
+      },
+      {
+        "type": "paragraph",
+        "text": "And honestly? I get it. Facebook is free, everyone in Egypt uses it, and it feels like enough. But here's the thing I keep seeing over and over: the clinics that invest in even a basic professional website consistently pull in more new patients than the ones relying solely on social media."
+      },
+      {
+        "type": "heading",
+        "text": "The Problem With Facebook-Only"
+      },
+      {
+        "type": "paragraph",
+        "text": "Don't get me wrong — Facebook is great for engagement. But it's terrible as your only digital presence. Think about it: when someone searches 'dermatologist in Maadi' or 'best dentist near me' on Google, Facebook pages rarely show up in the top results. You're essentially invisible to anyone who's actively looking for your exact service."
+      },
+      {
+        "type": "paragraph",
+        "text": "Then there's the trust factor. I've talked to dozens of patients, and they all say the same thing — when they're choosing between two doctors and one has a clean, professional website with clear information and the other only has a Facebook page with blurry cover photos, they go with the website every single time. It just feels more legitimate."
+      },
+      {
+        "type": "heading",
+        "text": "What a Good Clinic Website Actually Needs"
+      },
+      {
+        "type": "paragraph",
+        "text": "You don't need anything fancy. Seriously. The biggest mistake I see is people thinking they need some complex system with online booking and patient portals right from day one. Here's what actually moves the needle:"
+      },
+      {
+        "type": "paragraph",
+        "text": "A clear homepage that tells people who you are and what you specialize in. A services page that lists what you offer in plain language — not medical jargon. Your location with an embedded Google Map (this alone helps with local SEO). Your phone number and WhatsApp link front and center. And maybe a few patient testimonials if you have them."
+      },
+      {
+        "type": "paragraph",
+        "text": "That's it. I've built clinic websites that are literally five pages long and they've doubled the owner's new patient inquiries within the first two months."
+      },
+      {
+        "type": "heading",
+        "text": "The Cost Argument"
+      },
+      {
+        "type": "paragraph",
+        "text": "Look, I know budget is always a concern. I work with Egyptian businesses every day, and I understand the economics. That's exactly why I offer a risk-free model — I build the entire website first, and you only pay if you're happy with it. Zero upfront cost."
+      },
+      {
+        "type": "paragraph",
+        "text": "But even beyond my offer, think about it this way: you're probably spending money on social media ads already. Those ads are sending people to a Facebook page where they have to scroll through posts to find your phone number. A website gives those paid clicks somewhere professional to land. Your same ad budget immediately becomes more effective."
+      },
+      {
+        "type": "heading",
+        "text": "The Bottom Line"
+      },
+      {
+        "type": "paragraph",
+        "text": "I'm not saying delete your Facebook page. Keep it, post on it, engage with your community. But treat it as one channel — not your entire digital strategy. A website is your home base on the internet. It's the one place you fully control, that works for you 24/7, and that Google can actually find and recommend to new patients."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're a clinic owner reading this and you're on the fence, feel free to reach out. I'm happy to do a free 15-minute call just to talk through whether a website makes sense for your specific situation. No pressure, no pitch — just an honest conversation."
+      }
+    ]
+  },
+  {
+    "id": "how-i-built-ecommerce-platform-for-egyptian-market",
+    "title": "How I Built an E-Commerce Platform Tailored for the Egyptian Market",
+    "excerpt": "International e-commerce solutions don't work well in Egypt. Cash on delivery, InstaPay, Vodafone Cash — here's how I built a platform that actually fits how Egyptians shop.",
+    "date": "March 22, 2025",
+    "readTime": "7 min read",
+    "tags": ["E-Commerce", "Development", "Egypt"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "When I started building Waraqa — an e-commerce platform for selling premium sketchbooks in Egypt — I made the mistake every developer makes: I tried to copy what works internationally. Stripe for payments, standard checkout flow, the whole nine yards. It took me about a week to realize that approach was completely wrong for the Egyptian market."
+      },
+      {
+        "type": "paragraph",
+        "text": "Let me walk you through the real challenges I faced and how I solved them, because if you're thinking about launching an online store in Egypt, this might save you months of headaches."
+      },
+      {
+        "type": "heading",
+        "text": "Payment Methods Are Everything"
+      },
+      {
+        "type": "paragraph",
+        "text": "Here's a stat that surprised me when I first looked into it: roughly 70% of online purchases in Egypt are still cash on delivery. Seventy percent. If your e-commerce platform doesn't support COD, you're immediately cutting off the majority of your potential customers."
+      },
+      {
+        "type": "paragraph",
+        "text": "But it goes beyond just COD. Mobile wallets are growing fast — Vodafone Cash and InstaPay are becoming the preferred digital payment methods, not credit cards. And then there's Fawry, which lets people pay at kiosks and stores across the country. So for Waraqa, I ended up implementing four payment methods: Cash on Delivery, InstaPay, Fawry, and Vodafone Cash."
+      },
+      {
+        "type": "paragraph",
+        "text": "Was it more work? Absolutely. But the conversion rate difference was massive. When I first launched with just card payments, we were getting maybe 2-3 orders a day. After adding COD and mobile wallets, that jumped to 15-20. Same traffic, same products — just payment methods that match how Egyptians actually prefer to pay."
+      },
+      {
+        "type": "heading",
+        "text": "Arabic Support Isn't Just Translation"
+      },
+      {
+        "type": "paragraph",
+        "text": "This is something a lot of developers underestimate. Supporting Arabic isn't just about translating strings — it's about completely rethinking your layout. Arabic reads right-to-left, which means your entire UI needs to mirror. Navigation, text alignment, button positions, even the direction of progress indicators — everything flips."
+      },
+      {
+        "type": "paragraph",
+        "text": "I built Waraqa with full bilingual support from day one, and I'm glad I did. About 60% of our users browse in Arabic. If I had treated Arabic support as an afterthought and tried to bolt it on later, it would have been a nightmare. My advice: if you're building for the Egyptian market, plan for RTL from the start."
+      },
+      {
+        "type": "heading",
+        "text": "Shipping and Logistics"
+      },
+      {
+        "type": "paragraph",
+        "text": "Another thing that's different here: addresses in Egypt are... let's say creative. There's no standardized address format like you'd find in the US or Europe. People describe their location with landmarks, building colors, nearby mosques — all sorts of things that don't fit neatly into an 'Address Line 1' field."
+      },
+      {
+        "type": "paragraph",
+        "text": "I ended up adding a free-text delivery notes field that's prominently placed in the checkout flow, and I integrated with local delivery partners rather than trying to use international shipping APIs. The delivery experience is just as important as the buying experience, and using services that understand Egyptian neighborhoods makes a huge difference."
+      },
+      {
+        "type": "heading",
+        "text": "The Tech Stack"
+      },
+      {
+        "type": "paragraph",
+        "text": "For anyone curious about the technical side: I built Waraqa with Next.js for the frontend, Supabase for the backend and database, and Tailwind CSS for styling. Supabase was a great choice for this project because it gave me real-time database updates (super useful for order tracking), built-in authentication, and it's much more affordable than Firebase for the transaction volumes we're dealing with."
+      },
+      {
+        "type": "paragraph",
+        "text": "The admin dashboard was actually the part I spent the most time on. Store owners need to see their orders, track payments across four different methods, manage inventory, and view basic analytics — all without needing any technical knowledge. I built it to be as simple as scrolling through a WhatsApp chat, because that's the user experience level I was targeting."
+      },
+      {
+        "type": "heading",
+        "text": "Lessons Learned"
+      },
+      {
+        "type": "paragraph",
+        "text": "If I could go back and give myself one piece of advice before starting this project, it would be this: build for how your users actually behave, not how you think they should behave. Every assumption I brought from international e-commerce best practices had to be questioned and often thrown out entirely."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Egyptian market is full of opportunity for e-commerce, but only if you're willing to adapt your approach to fit the local reality. International templates won't cut it. You need to understand the payment landscape, the language nuances, and the logistics challenges — and build specifically for them."
+      }
+    ]
+  },
+  {
+    "id": "5-seo-mistakes-egyptian-businesses-make",
+    "title": "5 SEO Mistakes I See Egyptian Businesses Make Over and Over",
+    "excerpt": "After working with dozens of Egyptian businesses, these are the same SEO mistakes I keep fixing. The good news? They're all easy to avoid.",
+    "date": "March 5, 2025",
+    "readTime": "6 min read",
+    "tags": ["SEO", "Marketing", "Tips"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "I've been doing SEO work for Egyptian businesses for a few years now, and I swear, I see the same mistakes on almost every website I audit. The frustrating part is that these aren't complicated technical issues — they're simple things that, once fixed, can genuinely move the needle on your Google rankings."
+      },
+      {
+        "type": "paragraph",
+        "text": "So here they are — the five most common SEO mistakes I keep seeing, and exactly how to fix them."
+      },
+      {
+        "type": "heading",
+        "text": "1. Ignoring Local SEO Completely"
+      },
+      {
+        "type": "paragraph",
+        "text": "This is the biggest one by far. Most Egyptian businesses I work with have never even heard of Google Business Profile (formerly Google My Business). They'll spend money on Facebook ads and completely ignore the fact that Google literally has a free tool that puts your business on the map — literally."
+      },
+      {
+        "type": "paragraph",
+        "text": "When someone searches 'restaurant in Zamalek' or 'pharmacy near me,' Google shows a map pack with three businesses. If you're not in that map pack, you're losing customers to competitors who probably have worse products or services than you. Setting up and optimizing a Google Business Profile takes maybe 30 minutes. There's no excuse not to do it."
+      },
+      {
+        "type": "heading",
+        "text": "2. Not Having Arabic Content"
+      },
+      {
+        "type": "paragraph",
+        "text": "So many Egyptian business websites are English-only. I get why — English feels more professional, and if you're in certain industries, your competition might be doing the same. But think about your actual customers. Most Egyptians search Google in Arabic, or at least in Franco-Arabic (Arabic written in English letters)."
+      },
+      {
+        "type": "paragraph",
+        "text": "If your website only has English content, you're invisible for Arabic search queries. And in Egypt, that's the majority of searches. You don't need to rebuild your entire site in Arabic — even adding key pages (homepage, services, contact) in Arabic can make a significant difference in your organic traffic."
+      },
+      {
+        "type": "heading",
+        "text": "3. Slow Website Speed"
+      },
+      {
+        "type": "paragraph",
+        "text": "This one drives me crazy because it's so fixable. I'll audit a business website and find 5MB images that someone uploaded straight from their phone without any compression. The homepage takes 8 seconds to load on a good connection. On Egyptian mobile data? Forget about it."
+      },
+      {
+        "type": "paragraph",
+        "text": "Google has been very clear: page speed is a ranking factor. But beyond rankings, it's just good business. Studies show that 53% of mobile users abandon a site that takes more than 3 seconds to load. In Egypt, where mobile internet can be spotty, speed matters even more. Compress your images, use modern formats like WebP, and consider lazy loading for images below the fold."
+      },
+      {
+        "type": "heading",
+        "text": "4. No Meta Descriptions or Title Tags"
+      },
+      {
+        "type": "paragraph",
+        "text": "I can't tell you how many Egyptian business websites I've seen where every page has the same title tag — usually just the business name, or worse, 'Home' or 'Page 1.' Your title tag is the first thing someone sees in Google search results. It's your headline, your first impression, your one chance to convince someone to click on your link instead of the ten others on the page."
+      },
+      {
+        "type": "paragraph",
+        "text": "Every page on your site should have a unique, descriptive title tag that includes relevant keywords. Same goes for meta descriptions — that little snippet of text under the title in search results. If you don't write one, Google will pull random text from your page, and it usually looks terrible."
+      },
+      {
+        "type": "heading",
+        "text": "5. Not Tracking Anything"
+      },
+      {
+        "type": "paragraph",
+        "text": "Here's a conversation I've had too many times: 'How many people visit your website each month?' 'I don't know.' 'Where do they come from?' 'I don't know.' 'Which pages do they visit most?' 'I don't know.' You can't improve what you don't measure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Google Analytics is free. Google Search Console is free. Together, they tell you how many people visit your site, what they search to find you, which pages are most popular, and where you're losing people. Installing them takes about 10 minutes. I set them up for every client I work with, and the insights always lead to actionable improvements."
+      },
+      {
+        "type": "heading",
+        "text": "The Good News"
+      },
+      {
+        "type": "paragraph",
+        "text": "Here's what I want you to take away from this: these aren't advanced SEO strategies that require expensive tools or deep technical knowledge. They're basics. And the fact that most of your competitors in Egypt aren't doing them means that fixing these five things puts you ahead of the pack immediately."
+      },
+      {
+        "type": "paragraph",
+        "text": "Start with just one. Claim your Google Business Profile, or compress your images, or write proper title tags. Small steps, consistent progress. That's how you win at SEO — especially in a market like Egypt where the competition for online visibility is still relatively low compared to more mature markets."
+      },
+      {
+        "type": "paragraph",
+        "text": "And if you want someone to audit your website and give you a prioritized list of what to fix first, you know where to find me. I genuinely enjoy this stuff, and the first consultation is always free."
+      }
+    ]
+  }
+]

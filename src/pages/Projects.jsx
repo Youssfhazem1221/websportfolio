@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Filter } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import projects from '../data/projects.json';
 
 const Projects = () => {
@@ -12,17 +12,13 @@ const Projects = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
-
-  // First project gets a massive hero treatment
-  const heroProject = filtered[0];
-  const restProjects = filtered.slice(1);
 
   return (
     <motion.div
@@ -34,7 +30,7 @@ const Projects = () => {
     >
       <div className="container" style={{ maxWidth: '1200px' }}>
         {/* Page Header */}
-        <motion.div variants={itemVariants} style={{ marginBottom: '4rem', textAlign: 'center' }}>
+        <motion.div variants={itemVariants} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
           <p className="hero-eyebrow"><Sparkles size={12} style={{ marginRight: '6px' }} /> My Portfolio</p>
           <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>
             Selected <span>Work</span>
@@ -45,7 +41,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Filter Tabs */}
-        <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '0.625rem', marginBottom: '4rem', flexWrap: 'wrap' }}>
+        <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '0.625rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
           {['All', ...allTags].map(tag => (
             <motion.button
               key={tag}
@@ -70,6 +66,7 @@ const Projects = () => {
           ))}
         </motion.div>
 
+        {/* Projects Grid — Consistent Card Layout */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
@@ -77,94 +74,53 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
+            className="projects-grid"
+            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '2rem' }}
           >
-            {/* Hero Project — Full Width Showcase */}
-            {heroProject && (
-              <motion.div variants={itemVariants} style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
-                <Link to={"/project/" + heroProject.id} style={{ display: 'block', borderRadius: '2rem', overflow: 'hidden', position: 'relative' }} className="glass-panel glow-border project-featured">
-                  <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden' }}>
+            {filtered.map((project, i) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="project-card glass-panel glow-border"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link to={"/project/" + project.id} style={{ display: 'block' }}>
+                  {/* Image */}
+                  <div className="project-card-img-wrap" style={{ aspectRatio: '16/10', borderRadius: '1rem', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid var(--border)' }}>
                     <img
-                      src={heroProject.image}
-                      alt={heroProject.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s ease' }}
+                      src={project.image}
+                      alt={project.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
                     />
-                    {/* Gradient overlay */}
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 40%, transparent 70%)',
-                    }} />
-                    {/* Content over image */}
-                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 'clamp(1.5rem, 3vw, 3.5rem)' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-                        <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.3)', backdropFilter: 'blur(10px)' }}>
-                          ✦ FEATURED
-                        </span>
-                        <span className="tag" style={{ backdropFilter: 'blur(10px)', background: 'rgba(255,255,255,0.08)' }}>{heroProject.year}</span>
-                      </div>
-                      <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', marginBottom: '0.75rem', lineHeight: 1.1, color: '#fff', maxWidth: '32rem' }}>{heroProject.title}</h2>
-                      <p style={{ fontSize: '1rem', marginBottom: '1.5rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.7)', maxWidth: '30rem' }}>{heroProject.subtitle}</p>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                        <div className="tags">
-                          {heroProject.tags.map(tag => <span key={tag} className="tag" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(10px)' }}>{tag}</span>)}
-                        </div>
-                        <span className="nav-link" style={{ color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: '6px', marginLeft: 'auto' }}>
-                          View Case Study <ArrowRight size={16} />
-                        </span>
-                      </div>
-                    </div>
                   </div>
+
+                  {/* Meta row */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                    <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.2)' }}>
+                      {project.tags[0]}
+                    </span>
+                    <span className="tag">{project.year}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="project-card-title" style={{ fontSize: '1.375rem', marginBottom: '0.625rem', lineHeight: 1.2 }}>{project.title}</h3>
+
+                  {/* Subtitle */}
+                  <p style={{ fontSize: '0.9375rem', marginBottom: '1.5rem', lineHeight: 1.6, color: 'var(--text-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.subtitle}</p>
+
+                  {/* Tags */}
+                  <div className="tags" style={{ marginBottom: '1.5rem' }}>
+                    {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
+                  </div>
+
+                  {/* CTA */}
+                  <span className="nav-link" style={{ color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    View Case Study <ArrowRight size={14} />
+                  </span>
                 </Link>
               </motion.div>
-            )}
-
-            {/* Rest of Projects — Alternating Split Layout */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 4vw, 4rem)' }}>
-              {restProjects.map((project, index) => {
-                const isEven = index % 2 === 0;
-                return (
-                  <motion.div key={project.id} variants={itemVariants}>
-                    <Link
-                      to={"/project/" + project.id}
-                      className="project-featured glass-panel glow-border"
-                      style={{
-                        display: 'flex',
-                        flexDirection: isEven ? 'row' : 'row-reverse',
-                        gap: '0',
-                        borderRadius: '1.5rem',
-                        overflow: 'hidden'
-                      }}
-                    >
-                      {/* Image */}
-                      <div className="project-featured-img" style={{ flex: '1 1 55%', overflow: 'hidden', minHeight: '280px' }}>
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
-                        />
-                      </div>
-
-                      {/* Content */}
-                      <div style={{ flex: '1 1 45%', padding: 'clamp(1.5rem, 3vw, 3rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-                          <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.2)' }}>
-                            PROJECT {String(index + 2).padStart(2, '0')}
-                          </span>
-                          <span className="tag">{project.year}</span>
-                        </div>
-                        <h2 style={{ fontSize: 'clamp(1.375rem, 2.5vw, 1.875rem)', marginBottom: '0.875rem', lineHeight: 1.2, color: '#fff' }}>{project.title}</h2>
-                        <p style={{ fontSize: '0.9375rem', marginBottom: '1.75rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>{project.subtitle}</p>
-                        <div className="tags" style={{ marginBottom: '1.75rem' }}>
-                          {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-                        </div>
-                        <span className="nav-link" style={{ color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                          View Case Study <ArrowRight size={16} />
-                        </span>
-                      </div>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </div>
+            ))}
           </motion.div>
         </AnimatePresence>
 

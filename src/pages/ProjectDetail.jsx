@@ -134,23 +134,22 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* 5. Full Presentation Images Layout */}
+      {/* 5. Full Presentation Images — Seamless Flow */}
       {project.presentationImages && project.presentationImages.length > 0 && (
-        <section className="section" style={{ paddingBottom: '8rem' }}>
-          <div className="container" style={{ maxWidth: '1400px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-              {project.presentationImages.map((img, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  style={{ borderRadius: '1.5rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', background: '#0a0a0a' }}
-                >
-                  <img src={img} alt={`${project.title} presentation ${idx + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} loading="lazy" />
-                </motion.div>
-              ))}
-            </div>
+        <section style={{ paddingBottom: '0' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto', overflow: 'hidden', borderRadius: '1.5rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+            {project.presentationImages.map((img, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
+                style={{ lineHeight: 0 }}
+              >
+                <img src={img} alt={`${project.title} presentation ${idx + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} loading="lazy" />
+              </motion.div>
+            ))}
           </div>
         </section>
       )}

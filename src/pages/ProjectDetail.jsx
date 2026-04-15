@@ -156,10 +156,10 @@ const ProjectDetail = () => {
       )}
 
       {/* 6. Footer CTA */}
-      <section className="section" style={{ borderTop: '1px solid var(--border)', background: 'linear-gradient(to bottom, transparent, rgba(0,242,255,0.03))' }}>
+      <section className="section" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="container" style={{ textAlign: 'center', padding: '4rem 0' }}>
           <p className="hero-eyebrow" style={{ marginBottom: '1.5rem' }}>Next Steps</p>
-          <h2 className="hero-title" style={{ fontSize: '3rem', marginBottom: '2.5rem' }}>Have a similar project?</h2>
+          <h2 className="hero-title" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', marginBottom: '2.5rem' }}>Have a similar project?</h2>
           <Link to="/contact" className="btn-primary" style={{ display: 'inline-flex' }}>
             Start a Conversation <ArrowRight size={20} />
           </Link>

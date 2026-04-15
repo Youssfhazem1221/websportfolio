@@ -27,10 +27,10 @@ const Blog = () => {
     >
       <div className="container">
         {/* Header */}
-        <motion.div variants={itemVariants} style={{ marginBottom: '5rem', textAlign: 'center' }}>
+        <motion.div variants={itemVariants} style={{ marginBottom: '5rem', textAlign: 'left' }}>
           <p className="hero-eyebrow">From the Blog</p>
           <h1 className="hero-title" style={{ fontSize: '4rem' }}>Blog</h1>
-          <p className="hero-subtitle" style={{ textAlign: 'center', margin: '0 auto' }}>
+          <p className="hero-subtitle" style={{ maxWidth: '40rem' }}>
             Insights on UI/UX design, business strategy, and building digital products for the Egyptian and global market.
           </p>
         </motion.div>

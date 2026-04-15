@@ -38,19 +38,19 @@ const About = () => {
           <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '3rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <Code color="var(--accent-cyan)" size={24} />
-              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>Technical Skills</h2>
+              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>Design & Technical Skills</h2>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-              {['Figma', 'UI/UX Design', 'Wireframing', 'User Research', 'React', 'Data Analysis', 'Product Strategy', 'Framer Motion'].map(skill => (
-                <span key={skill} className="tag" style={{ border: '1px solid rgba(0, 242, 255, 0.2)', color: 'var(--accent-cyan)' }}>{skill}</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+              {['UX/UI Design', 'Product Design', 'Figma', 'Adobe Creative Suite', 'Wireframing', 'Prototyping', 'User Research', 'Workflow Automation', 'CX Strategy', 'Information Architecture', 'Healthcare UX', 'Fintech Interfaces', 'Responsive Web Design'].map(skill => (
+                <span key={skill} className="tag" style={{ border: '1px solid rgba(0, 242, 255, 0.2)', color: 'var(--accent-cyan)', padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>{skill}</span>
               ))}
             </div>
             <div style={{ marginTop: '3rem' }}>
-              <h3 className="skill-group-title" style={{ color: 'var(--accent-cyan)', marginBottom: '1.5rem' }}>What I Specialize In</h3>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9375rem' }}><Zap size={14} /> User-Centered Interface Design</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9375rem' }}><Zap size={14} /> Data-Driven Business Strategies</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9375rem' }}><Zap size={14} /> Translating User Needs to Product Specs</li>
+              <h3 className="skill-group-title" style={{ color: 'var(--accent-cyan)', marginBottom: '1.5rem' }}>Areas of Expertise</h3>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1rem', lineHeight: 1.5 }}><Zap size={18} style={{ color: 'var(--accent-purple)', flexShrink: 0, marginTop: '2px' }} /> <strong>End-to-End Product Design:</strong> Managing the full UX lifecycle from user research to high-fidelity prototypes.</li>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1rem', lineHeight: 1.5 }}><Zap size={18} style={{ color: 'var(--accent-purple)', flexShrink: 0, marginTop: '2px' }} /> <strong>Workflow Optimization:</strong> Building custom tools, Chrome extensions, and interfaces that drastically reduce handling time.</li>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1rem', lineHeight: 1.5 }}><Zap size={18} style={{ color: 'var(--accent-purple)', flexShrink: 0, marginTop: '2px' }} /> <strong>Brand Identity Systems:</strong> Ensuring cohesive brand language spans identically from logo concepts to digital implementation.</li>
               </ul>
             </div>
           </motion.div>

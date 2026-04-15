@@ -755,11 +755,16 @@ input:focus, textarea:focus {
   .hero-stat-label { font-size: 0.625rem; }
   .hero-stat-divider { height: 2rem; }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-featured { grid-template-columns: 1fr !important; }
+  .project-featured { flex-direction: column !important; }
   .project-featured-img { aspect-ratio: 16/9 !important; }
+  .project-detail-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .project-meta-col { border-left: none !important; padding-left: 0 !important; border-top: 1px solid var(--border); padding-top: 2.5rem; }
   .blog-list-item { flex-direction: column !important; align-items: flex-start !important; gap: 1.25rem !important; }
   .blog-list-item > div:last-child { display: none; }
   .container { padding: 0 1.25rem; }
+  .site-header { top: auto; bottom: 1.5rem; }
+  .site-footer { margin-bottom: 5rem; }
+  .footer-top-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
 }
 
 @media (max-width: 480px) {

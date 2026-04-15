@@ -21,7 +21,7 @@ const Header = () => {
         className="header-inner"
       >
         <Link to="/" className="site-logo">
-          <img src="/LOGO main.png" alt="yh" />
+          <img src="/logo-main.png" alt="yh" />
         </Link>
         
         <nav className="site-nav">

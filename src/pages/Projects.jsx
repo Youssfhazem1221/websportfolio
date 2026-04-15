@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Eye } from 'lucide-react';
 import projects from '../data/projects.json';
 
 const Projects = () => {
@@ -20,6 +20,9 @@ const Projects = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
+  const heroProject = filtered[0];
+  const gridProjects = filtered.slice(1);
+
   return (
     <motion.div
       initial="hidden"
@@ -29,7 +32,7 @@ const Projects = () => {
       style={{ paddingTop: '8rem' }}
     >
       <div className="container" style={{ maxWidth: '1200px' }}>
-        {/* Page Header */}
+        {/* Header */}
         <motion.div variants={itemVariants} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
           <p className="hero-eyebrow"><Sparkles size={12} style={{ marginRight: '6px' }} /> My Portfolio</p>
           <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>
@@ -40,33 +43,37 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Filter Tabs */}
-        <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', gap: '0.625rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
-          {['All', ...allTags].map(tag => (
-            <motion.button
-              key={tag}
-              onClick={() => setActiveFilter(tag)}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                padding: '0.5rem 1.25rem',
-                borderRadius: '2rem',
-                border: activeFilter === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--border)',
-                background: activeFilter === tag ? 'rgba(0, 242, 255, 0.1)' : 'rgba(255,255,255,0.02)',
-                color: activeFilter === tag ? 'var(--accent-cyan)' : 'var(--text-muted)',
-                fontSize: '0.8125rem',
-                fontWeight: 600,
-                fontFamily: 'var(--font-sans)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              {tag}
-            </motion.button>
-          ))}
+        {/* Project Counter + Filters */}
+        <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+            Showing <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{filtered.length}</span> project{filtered.length !== 1 ? 's' : ''}
+          </p>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {['All', ...allTags].map(tag => (
+              <motion.button
+                key={tag}
+                onClick={() => setActiveFilter(tag)}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                  padding: '0.4rem 1rem',
+                  borderRadius: '2rem',
+                  border: activeFilter === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--border)',
+                  background: activeFilter === tag ? 'rgba(0, 242, 255, 0.1)' : 'transparent',
+                  color: activeFilter === tag ? 'var(--accent-cyan)' : 'var(--text-muted)',
+                  fontSize: '0.8125rem',
+                  fontWeight: 600,
+                  fontFamily: 'var(--font-sans)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                {tag}
+              </motion.button>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Projects Grid — Consistent Card Layout */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
@@ -74,53 +81,98 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="projects-grid"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '2rem' }}
           >
-            {filtered.map((project, i) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="project-card glass-panel glow-border"
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Link to={"/project/" + project.id} style={{ display: 'block' }}>
-                  {/* Image */}
-                  <div className="project-card-img-wrap" style={{ aspectRatio: '16/10', borderRadius: '1rem', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid var(--border)' }}>
+            {/* Hero Featured Project */}
+            {heroProject && (
+              <motion.div variants={itemVariants} style={{ marginBottom: '2rem' }}>
+                <Link
+                  to={"/project/" + heroProject.id}
+                  className="glass-panel glow-border project-featured"
+                  style={{ display: 'block', borderRadius: '1.5rem', overflow: 'hidden', position: 'relative' }}
+                >
+                  <div style={{ position: 'relative', aspectRatio: '21/9', overflow: 'hidden' }}>
                     <img
-                      src={project.image}
-                      alt={project.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                      src={heroProject.image}
+                      alt={heroProject.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s ease' }}
                     />
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(135deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.3) 50%, transparent 100%)',
+                    }} />
+                    <div style={{ position: 'absolute', inset: 0, padding: 'clamp(1.5rem, 3vw, 3.5rem)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                        <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.3)', backdropFilter: 'blur(10px)' }}>
+                          ✦ FEATURED
+                        </span>
+                        {heroProject.tags.map(t => (
+                          <span key={t} className="tag" style={{ backdropFilter: 'blur(10px)', background: 'rgba(255,255,255,0.08)' }}>{t}</span>
+                        ))}
+                      </div>
+                      <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', marginBottom: '0.625rem', lineHeight: 1.1, color: '#fff', maxWidth: '30rem' }}>{heroProject.title}</h2>
+                      <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.65)', maxWidth: '28rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>{heroProject.subtitle}</p>
+                      <span className="nav-link" style={{ color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                        View Case Study <ArrowRight size={14} />
+                      </span>
+                    </div>
                   </div>
-
-                  {/* Meta row */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-                    <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.2)' }}>
-                      {project.tags[0]}
-                    </span>
-                    <span className="tag">{project.year}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="project-card-title" style={{ fontSize: '1.375rem', marginBottom: '0.625rem', lineHeight: 1.2 }}>{project.title}</h3>
-
-                  {/* Subtitle */}
-                  <p style={{ fontSize: '0.9375rem', marginBottom: '1.5rem', lineHeight: 1.6, color: 'var(--text-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.subtitle}</p>
-
-                  {/* Tags */}
-                  <div className="tags" style={{ marginBottom: '1.5rem' }}>
-                    {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-                  </div>
-
-                  {/* CTA */}
-                  <span className="nav-link" style={{ color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    View Case Study <ArrowRight size={14} />
-                  </span>
                 </Link>
               </motion.div>
-            ))}
+            )}
+
+            {/* Project Cards Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+              {gridProjects.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  variants={itemVariants}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Link
+                    to={"/project/" + project.id}
+                    className="glass-panel glow-border"
+                    style={{ display: 'block', borderRadius: '1.25rem', overflow: 'hidden', height: '100%' }}
+                  >
+                    {/* Image with overlay on hover */}
+                    <div style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden' }}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                        className="project-card-hover-img"
+                      />
+                      {/* Hover overlay */}
+                      <div style={{
+                        position: 'absolute', inset: 0,
+                        background: 'rgba(0,0,0,0.5)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        opacity: 0, transition: 'opacity 0.4s ease',
+                      }} className="project-card-overlay">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '0.875rem', fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '2rem', background: 'rgba(0,242,255,0.15)', border: '1px solid rgba(0,242,255,0.3)', backdropFilter: 'blur(10px)' }}>
+                          <Eye size={16} /> View Project
+                        </div>
+                      </div>
+                      {/* Year badge */}
+                      <span style={{ position: 'absolute', top: '1rem', right: '1rem', fontSize: '0.6875rem', fontWeight: 700, padding: '0.25rem 0.75rem', borderRadius: '1rem', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', color: '#fff', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        {project.year}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div style={{ padding: '1.5rem' }}>
+                      <div className="tags" style={{ marginBottom: '0.875rem' }}>
+                        {project.tags.map(tag => (
+                          <span key={tag} className="tag" style={{ fontSize: '0.6875rem' }}>{tag}</span>
+                        ))}
+                      </div>
+                      <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', lineHeight: 1.25, color: '#fff' }}>{project.title}</h3>
+                      <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'var(--text-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.subtitle}</p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </AnimatePresence>
 

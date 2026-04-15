@@ -26,14 +26,14 @@ const Projects = () => {
         {/* Page Header */}
         <motion.div variants={itemVariants} style={{ marginBottom: '6rem', textAlign: 'center' }}>
           <p className="hero-eyebrow">My Portfolio</p>
-          <h1 className="hero-title" style={{ fontSize: '4rem' }}>Selected Work</h1>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>Selected Work</h1>
           <p className="hero-subtitle" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '40rem' }}>
             A collection of UI/UX design and strategy projects I've delivered for clients across Egypt and beyond.
           </p>
         </motion.div>
 
         {/* Stack of Featured Projects */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(3rem, 5vw, 6rem)' }}>
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
             return (
@@ -59,14 +59,14 @@ const Projects = () => {
                   </div>
 
                   {/* Content Div */}
-                  <div style={{ flex: '1 1 45%', padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ flex: '1 1 45%', padding: 'clamp(1.5rem, 3vw, 4rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                       <span className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 255, 0.2)' }}>
                         PROJECT {String(index + 1).padStart(2, '0')}
                       </span>
                       <span className="tag">{project.year}</span>
                     </div>
-                    <h2 style={{ fontSize: '2.25rem', marginBottom: '1.25rem', lineHeight: 1.15, color: '#fff' }}>{project.title}</h2>
+                    <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', marginBottom: '1rem', lineHeight: 1.15, color: '#fff' }}>{project.title}</h2>
                     <p style={{ fontSize: '1.0625rem', marginBottom: '2.5rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>{project.subtitle}</p>
                     <div className="tags" style={{ marginBottom: '2.5rem' }}>
                       {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}

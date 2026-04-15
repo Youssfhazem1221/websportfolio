@@ -24,16 +24,16 @@ const Contact = () => {
       className="page-main section"
     >
       <div className="container">
-        <motion.div variants={itemVariants} style={{ marginBottom: '6rem' }}>
+        <motion.div variants={itemVariants} style={{ marginBottom: '4rem' }}>
           <p className="hero-eyebrow">Let's Work Together</p>
-          <h1 className="hero-title" style={{ fontSize: '4rem' }}>Get in Touch</h1>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>Get in Touch</h1>
           <p className="hero-subtitle">
             Have a project in mind? I'd love to hear about it. Drop me a message and I'll get back to you within 24 hours.
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
-          <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '3.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '2.5rem' }}>
             {state.succeeded ? (
               <div style={{ textAlign: 'center', padding: '3rem 0' }}>
                 <div style={{ width: '80px', height: '80px', background: 'rgba(0, 242, 255, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>

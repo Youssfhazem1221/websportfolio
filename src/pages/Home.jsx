@@ -84,7 +84,7 @@ const Home = () => {
       {/* Feature Grid */}
       <section className="section">
         <div className="container">
-          <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '4rem' }}>
+          <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
               {[
                 { icon: <PenTool />, title: "UI/UX Engineering", text: "Designing and building intuitive, user-centered digital products with modern interface design patterns and seamless user experiences." },
@@ -107,7 +107,7 @@ const Home = () => {
       {/* Featured Projects */}
       <section className="section">
         <div className="container">
-          <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
+          <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <p className="hero-eyebrow" style={{ marginBottom: '1rem' }}>Featured Work</p>
               <h2 className="hero-title" style={{ fontSize: '3rem', margin: 0 }}>Recent Projects</h2>

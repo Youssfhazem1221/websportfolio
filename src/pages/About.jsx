@@ -21,9 +21,9 @@ const About = () => {
       className="page-main section"
     >
       <div className="container">
-        <motion.div variants={itemVariants} style={{ marginBottom: '6rem' }}>
+        <motion.div variants={itemVariants} style={{ marginBottom: '4rem' }}>
           <p className="hero-eyebrow">Get to Know Me</p>
-          <h1 className="hero-title" style={{ fontSize: '4rem' }}>About Me</h1>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>About Me</h1>
           <p className="hero-subtitle" style={{ maxWidth: '36rem' }}>
             Hey, I'm Youssf Hazem — a UI/UX & Product Designer based in Cairo, Egypt. With a Google UX Design Professional Certificate and a background in CX Operations, I build research-led, user-centric interfaces focused on solving real operational problems.
           </p>
@@ -34,7 +34,7 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
           <motion.div variants={itemVariants} className="glass-panel" style={{ padding: '3rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <Code color="var(--accent-cyan)" size={24} />

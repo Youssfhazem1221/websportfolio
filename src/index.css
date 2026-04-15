@@ -485,7 +485,7 @@ input:focus, textarea:focus {
 .cosmic-bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, #150b2e 0%, #030005 85%);
+  background: radial-gradient(ellipse at 50% 50%, #060b26 0%, #010104 100%);
   z-index: -2;
   overflow: hidden;
 }
@@ -497,8 +497,8 @@ input:focus, textarea:focus {
   filter: blur(120px);
   opacity: 0.25;
   mix-blend-mode: screen;
-  will-change: opacity;
-  animation: nebula-breathe 20s infinite alternate ease-in-out;
+  will-change: opacity, transform;
+  animation: nebula-breathe 25s infinite alternate ease-in-out;
 }
 
 .nebula-1 {
@@ -506,7 +506,7 @@ input:focus, textarea:focus {
   height: 80vw;
   top: -20%;
   left: -10%;
-  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  background: radial-gradient(circle, #2563eb 0%, transparent 70%);
 }
 
 .nebula-2 {
@@ -514,7 +514,7 @@ input:focus, textarea:focus {
   height: 90vw;
   bottom: -30%;
   right: -10%;
-  background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+  background: radial-gradient(circle, #0891b2 0%, transparent 70%);
   animation-delay: -8s;
 }
 
@@ -523,9 +523,9 @@ input:focus, textarea:focus {
   height: 60vw;
   top: 20%;
   right: 10%;
-  background: radial-gradient(circle, #bc13fe 0%, transparent 70%);
+  background: radial-gradient(circle, #6366f1 0%, transparent 70%);
   animation-delay: -4s;
-  opacity: 0.08;
+  opacity: 0.12;
 }
 
 /* Star Layers — CSS-only star field using box-shadow for realistic stars */
@@ -642,29 +642,55 @@ input:focus, textarea:focus {
   height: 2px;
   opacity: 0.4;
   box-shadow:
-    170px 100px 1px 0 rgba(0,242,255,0.4),
-    450px 300px 1px 0 rgba(188,19,254,0.3),
-    750px 180px 1px 0 rgba(0,242,255,0.3),
-    1050px 420px 1px 0 rgba(188,19,254,0.4),
-    1350px 250px 1px 0 rgba(0,242,255,0.3),
-    1650px 500px 1px 0 rgba(188,19,254,0.3),
-    250px 600px 1px 0 rgba(0,242,255,0.4),
-    550px 750px 1px 0 rgba(188,19,254,0.3),
-    850px 650px 1px 0 rgba(0,242,255,0.3),
-    1150px 800px 1px 0 rgba(188,19,254,0.4),
-    1450px 700px 1px 0 rgba(0,242,255,0.3),
-    1750px 850px 1px 0 rgba(188,19,254,0.3),
-    350px 950px 1px 0 rgba(0,242,255,0.4),
-    650px 1050px 1px 0 rgba(188,19,254,0.3),
-    950px 900px 1px 0 rgba(0,242,255,0.3);
+    170px 100px 1px 0 rgba(200,240,255,0.7),
+    450px 300px 1px 0 rgba(255,255,255,0.8),
+    750px 180px 1px 0 rgba(200,240,255,0.6),
+    1050px 420px 1px 0 rgba(255,255,255,0.9),
+    1350px 250px 1px 0 rgba(200,240,255,0.7),
+    1650px 500px 1px 0 rgba(255,255,255,0.8),
+    250px 600px 1px 0 rgba(200,240,255,0.6),
+    550px 750px 1px 0 rgba(255,255,255,0.9),
+    850px 650px 1px 0 rgba(200,240,255,0.7),
+    1150px 800px 1px 0 rgba(255,255,255,0.8),
+    1450px 700px 1px 0 rgba(200,240,255,0.6),
+    1750px 850px 1px 0 rgba(255,255,255,0.9),
+    350px 950px 1px 0 rgba(200,240,255,0.7),
+    650px 1050px 1px 0 rgba(255,255,255,0.8),
+    950px 900px 1px 0 rgba(200,240,255,0.6);
   animation: twinkle-3 10s ease-in-out infinite alternate;
 }
 
+/* Comets */
+.comet {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 3px #fff, 0 0 20px 5px rgba(0, 242, 255, 0.4);
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+
+.comet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+}
+
+.comet-1 { top: 20%; left: 110%; animation: comet-fall 12s infinite; }
+.comet-2 { top: -10%; left: 60%; animation: comet-fall 18s infinite; animation-delay: 6s; }
+.comet-3 { top: 40%; left: 120%; animation: comet-fall 25s infinite; animation-delay: 12s; }
+
 /* Cosmic Animations */
 @keyframes nebula-breathe {
-  0% { opacity: 0.15; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.2; }
+  0% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.05); }
+  100% { opacity: 0.2; transform: scale(0.95); }
 }
 
 @keyframes twinkle-1 {
@@ -679,7 +705,22 @@ input:focus, textarea:focus {
 
 @keyframes twinkle-3 {
   0% { opacity: 0.3; }
-  100% { opacity: 0.5; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes comet-fall {
+  0% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(-45deg);
+  }
+  15% {
+    opacity: 0;
+    transform: translateX(-100vw) translateY(100vw) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100vw) translateY(100vw) rotate(-45deg);
+  }
 }
 
 /* =============================================

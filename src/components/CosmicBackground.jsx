@@ -10,6 +10,11 @@ const CosmicBackground = () => {
       <div className="star-layer layer-1"></div>
       <div className="star-layer layer-2"></div>
       <div className="star-layer layer-3"></div>
+      
+      {/* Shooting Stars / Comets */}
+      <div className="comet comet-1"></div>
+      <div className="comet comet-2"></div>
+      <div className="comet comet-3"></div>
     </div>
   );
 };

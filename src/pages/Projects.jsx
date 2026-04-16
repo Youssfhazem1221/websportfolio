@@ -34,12 +34,12 @@ const Projects = () => {
       <div className="container" style={{ maxWidth: '1200px' }}>
         {/* Header */}
         <motion.div variants={itemVariants} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
-          <p className="hero-eyebrow"><Sparkles size={12} style={{ marginRight: '6px' }} /> My Portfolio</p>
+          <p className="hero-eyebrow"><Sparkles size={12} style={{ marginRight: '6px' }} /> Portfolio & Case Studies</p>
           <h1 className="hero-title" style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)' }}>
-            Selected <span>Work</span>
+            Digital <span>Products</span>
           </h1>
-          <p className="hero-subtitle" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '36rem' }}>
-            A curated collection of UI/UX design and brand strategy projects delivered for clients across Egypt and beyond.
+          <p className="hero-subtitle" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '38rem' }}>
+            A curated showcase of UI/UX design, modern brand identities, and high-performance digital applications engineered to solve complex business challenges.
           </p>
         </motion.div>
 
@@ -120,68 +120,84 @@ const Projects = () => {
               </motion.div>
             )}
 
-            {/* Project Cards Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
-              {gridProjects.map((project, i) => (
+            {/* Project Cards Grid — Bento Box Style */}
+            <div className="bento-grid">
+              {gridProjects.map((project, i) => {
+                const isLarge = i % 4 === 0 || i % 4 === 3; // Pattern: Large, Small, Small, Large
+                return (
                 <motion.div
                   key={project.id}
                   variants={itemVariants}
-                  whileHover={{ y: -6 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.4 }}
+                  className={isLarge ? 'project-wrapper-large' : 'project-wrapper-small'}
                 >
                   <Link
                     to={"/project/" + project.id}
-                    className="glass-panel glow-border"
-                    style={{ display: 'block', borderRadius: '1.25rem', overflow: 'hidden', height: '100%' }}
+                    className="glass-panel glow-border project-tile"
+                    style={{ position: 'relative', display: 'block', borderRadius: '1.5rem', overflow: 'hidden', height: '400px' }}
                   >
-                    {/* Image with overlay on hover */}
-                    <div style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden' }}>
+                    {/* Full Background Image */}
+                    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
                       <img
                         src={project.image}
                         alt={project.title}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s ease' }}
                         className="project-card-hover-img"
                       />
-                      {/* Hover overlay */}
-                      <div style={{
-                        position: 'absolute', inset: 0,
-                        background: 'rgba(0,0,0,0.5)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        opacity: 0, transition: 'opacity 0.4s ease',
-                      }} className="project-card-overlay">
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '0.875rem', fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '2rem', background: 'rgba(0,242,255,0.15)', border: '1px solid rgba(0,242,255,0.3)', backdropFilter: 'blur(10px)' }}>
-                          <Eye size={16} /> View Project
-                        </div>
+                    </div>
+
+                    {/* Default Gradient Overlay */}
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(to top, rgba(1, 1, 4, 0.95) 0%, rgba(1, 1, 4, 0.4) 50%, transparent 100%)',
+                      transition: 'background 0.4s ease'
+                    }} className="project-tile-gradient" />
+
+                    {/* Hover Overlay with View Project */}
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'rgba(0, 0, 0, 0.3)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      opacity: 0, transition: 'all 0.4s ease',
+                      backdropFilter: 'blur(4px)'
+                    }} className="project-card-overlay">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '0.875rem', fontWeight: 600, padding: '0.75rem 1.75rem', borderRadius: '2rem', background: 'rgba(0,242,255,0.15)', border: '1px solid rgba(0,242,255,0.3)', backdropFilter: 'blur(10px)', transform: 'translateY(15px)', transition: 'transform 0.4s ease' }} className="project-card-pill">
+                        <Eye size={18} /> View Project
                       </div>
-                      {/* Year badge */}
-                      <span style={{ position: 'absolute', top: '1rem', right: '1rem', fontSize: '0.6875rem', fontWeight: 700, padding: '0.25rem 0.75rem', borderRadius: '1rem', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', color: '#fff', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    </div>
+
+                    {/* Year badge (Top Right) */}
+                    <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem' }}>
+                      <span style={{ fontSize: '0.6875rem', fontWeight: 700, padding: '0.375rem 0.875rem', borderRadius: '1rem', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)' }}>
                         {project.year}
                       </span>
                     </div>
 
-                    {/* Content */}
-                    <div style={{ padding: '1.5rem' }}>
-                      <div className="tags" style={{ marginBottom: '0.875rem' }}>
+                    {/* Content Overlay (Bottom) */}
+                    <div style={{ position: 'absolute', inset: 0, padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 2 }} className="project-tile-content">
+                      <div className="tags" style={{ marginBottom: '1rem' }}>
                         {project.tags.map(tag => (
-                          <span key={tag} className="tag" style={{ fontSize: '0.6875rem' }}>{tag}</span>
+                          <span key={tag} className="tag" style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)' }}>{tag}</span>
                         ))}
                       </div>
-                      <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', lineHeight: 1.25, color: '#fff' }}>{project.title}</h3>
-                      <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'var(--text-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.subtitle}</p>
+                      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', lineHeight: 1.25, color: '#fff' }}>{project.title}</h3>
+                      <p style={{ fontSize: '0.9375rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.subtitle}</p>
                     </div>
                   </Link>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Bottom CTA */}
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginTop: 'clamp(4rem, 6vw, 6rem)' }}>
-          <div className="glass-panel" style={{ padding: 'clamp(2rem, 4vw, 3.5rem)', borderRadius: '1.5rem', display: 'inline-block', maxWidth: '36rem' }}>
-            <h3 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', marginBottom: '1rem', color: '#fff' }}>Interested in working together?</h3>
+          <div className="glass-panel" style={{ padding: 'clamp(2rem, 4vw, 3.5rem)', borderRadius: '1.5rem', display: 'inline-block', maxWidth: '40rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', marginBottom: '1rem', color: '#fff' }}>Have a project in mind?</h3>
             <p style={{ fontSize: '0.9375rem', color: 'var(--text-muted)', marginBottom: '2rem', lineHeight: 1.6 }}>
-              I'm always open to new opportunities and collaborations. Let's create something remarkable.
+              Whether you need to redesign your mobile app, refine your user experience, or build a scalable digital product from scratch—I'm ready to help you thrive. Let's connect and build something extraordinary.
             </p>
             <Link to="/contact" className="btn-primary" style={{ margin: '0 auto' }}>
               Get in Touch <ArrowRight size={18} />

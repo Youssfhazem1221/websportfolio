@@ -1,63 +1,10 @@
 [
   {
-    "id": "women-fashion-brand-profile",
-    "title": "Women Fashion Brand Profile",
-    "behanceId": "237994351",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
-    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/57d226237994351.690babcb5363d.png",
-    "tags": [
-      "Branding",
-      "Fashion"
-    ],
-    "year": "2025",
-    "role": "Designer",
-    "link": "https://www.behance.net/gallery/237994351/Women-Fashion-Brand-Profile",
-    "presentationImages": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/57d226237994351.690babcb5363d.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b28b5f237994351.690babcb54529.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/03e2ff237994351.690babcb5514f.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4de01e237994351.690babcb54b7f.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/80a4f1237994351.690babcb53c3c.png"
-    ]
-  },
-  {
-    "id": "doctor-appointment-app-ux-case-study",
-    "title": "Doctor Appointment App | UX Case Study",
-    "behanceId": "236248469",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
-    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/43d178236248469.68e7aafa64a77.png",
-    "tags": [
-      "UI/UX",
-      "Product Design"
-    ],
-    "year": "2025",
-    "role": "Designer",
-    "link": "https://www.behance.net/gallery/236248469/Doctor-Appointment-App-UX-Case-Study",
-    "presentationImages": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/43d178236248469.68e7aafa64a77.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/2fc2b9236248469.68e7aafa5ed4b.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/80ce38236248469.68e7aafa60683.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e5268d236248469.68e7aafa658b0.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/329abf236248469.68e7aafa5f5e0.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/49e0cc236248469.68e7aafa5fe07.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/5e8d7d236248469.68e7aafa62651.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/f84468236248469.68e7aafa62f28.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/a707a1236248469.68e7aafa60f74.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c0e36d236248469.68e7aafa65205.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/5d9436236248469.68e7aafa63898.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/6d1f52236248469.68e7aafa61c1f.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/0efdfb236248469.68e7aafa64450.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c5b92f236248469.68e7aafa5e49e.png"
-    ]
-  },
-  {
     "id": "cib-mobile-banking-app-uxui-redesign",
-    "title": "CIB Mobile Banking App – UX/UI Redesign",
+    "title": "CIB Fintech Redesign",
     "behanceId": "235671415",
-    "subtitle": "This is a complete UX/UI redesign of the CIB Mobile Banking App, one of Egypt’s ...",
-    "description": "This is a complete UX/UI redesign of the CIB Mobile Banking App, one of Egypt’s leading financial platforms. The project focuses on solving major usability challenges by streamlining navigation, improving accessibility, and creating a modern, consistent d...",
+    "subtitle": "A complete UX/UI overhaul of Egypt's leading financial app, focusing on secure, accessible, and seamless mobile banking experiences.",
+    "description": "This is a complete conceptual UX/UI redesign of the CIB Mobile Banking App. The project tackles major usability challenges by streamlining financial navigation, introducing smart fintech dashboards, and establishing a consistent design system that builds user trust.",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/b1c786235671415.68dc052dae63d.png",
     "tags": [
       "UI/UX",
@@ -89,11 +36,64 @@
     ]
   },
   {
+    "id": "women-fashion-brand-profile",
+    "title": "Women Fashion Brand Profile",
+    "behanceId": "237994351",
+    "subtitle": "A sleek, systematic brand identity and UI/UX design showcase tailored for the modern women's fashion industry.",
+    "description": "This case study dives into the creation of a cohesive, high-end fashion brand identity. By prioritizing user-centered design and a minimalist aesthetic, I crafted an engaging visual experience that seamlessly bridges e-commerce functionality with editorial fashion appeal.",
+    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/57d226237994351.690babcb5363d.png",
+    "tags": [
+      "Branding",
+      "Fashion"
+    ],
+    "year": "2025",
+    "role": "Designer",
+    "link": "https://www.behance.net/gallery/237994351/Women-Fashion-Brand-Profile",
+    "presentationImages": [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/57d226237994351.690babcb5363d.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b28b5f237994351.690babcb54529.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/03e2ff237994351.690babcb5514f.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4de01e237994351.690babcb54b7f.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/80a4f1237994351.690babcb53c3c.png"
+    ]
+  },
+  {
+    "id": "doctor-appointment-app-ux-case-study",
+    "title": "Healthcare Booking App",
+    "behanceId": "236248469",
+    "subtitle": "An intuitive, user-centric mobile application designed to streamline online doctor scheduling and elevate digital patient care.",
+    "description": "Improving the healthcare journey through modern product design. This UI/UX case study outlines the research, wireframing, and interactive prototyping behind a digital clinic app aimed at reducing booking friction and improving patient-doctor accessibility.",
+    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/43d178236248469.68e7aafa64a77.png",
+    "tags": [
+      "UI/UX",
+      "Product Design"
+    ],
+    "year": "2025",
+    "role": "Designer",
+    "link": "https://www.behance.net/gallery/236248469/Doctor-Appointment-App-UX-Case-Study",
+    "presentationImages": [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/43d178236248469.68e7aafa64a77.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/2fc2b9236248469.68e7aafa5ed4b.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/80ce38236248469.68e7aafa60683.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e5268d236248469.68e7aafa658b0.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/329abf236248469.68e7aafa5f5e0.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/49e0cc236248469.68e7aafa5fe07.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/5e8d7d236248469.68e7aafa62651.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/f84468236248469.68e7aafa62f28.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/a707a1236248469.68e7aafa60f74.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c0e36d236248469.68e7aafa65205.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/5d9436236248469.68e7aafa63898.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/6d1f52236248469.68e7aafa61c1f.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/0efdfb236248469.68e7aafa64450.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c5b92f236248469.68e7aafa5e49e.png"
+    ]
+  },
+  {
     "id": "musician-single-page-site-concept",
-    "title": "Musician single page site concept",
+    "title": "Artist Web Concept",
     "behanceId": "204435779",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
+    "subtitle": "A dark, dynamic single-page web concept crafted for musicians, blending striking visual aesthetics with smooth scrolling.",
+    "description": "An exploration into web experiences for the music industry. This landing page concept utilizes bold typography, dark mode UI, and immersive imagery to create a digital atmosphere that resonates with an artist's unique audio identity.",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/99129f204435779.66a8f43a5933b.png",
     "tags": [
       "UI/UX",
@@ -111,10 +111,10 @@
   },
   {
     "id": "netlink-logo-concept",
-    "title": "Netlink | Logo concept",
+    "title": "Netlink Brand Identity",
     "behanceId": "204375077",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
+    "subtitle": "A modern, impactful logo design and brand positioning strategy created for the tech-forward Netlink enterprise.",
+    "description": "Building trust through typography and form. This logotype concept distills the essence of connectivity and high-speed networking into a sharp, scalable, and highly memorable visual identity mark suitable for global scaling.",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/f7b918204375077.66a7fc44be6ad.png",
     "tags": [
       "Branding",
@@ -138,10 +138,10 @@
   },
   {
     "id": "maxmus-logo-concept",
-    "title": "Maxmus | Logo concept",
+    "title": "Maxmus Logomark",
     "behanceId": "201553545",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
+    "subtitle": "A bold, geometric logo and visual identity system developed to define the core aesthetic architecture of Maxmus.",
+    "description": "Exploring strength and precision in branding. This project covers the conceptualization, grid layout, and color palette creation of a monolithic logo design ready to be adapted across print packaging and digital touchpoints.",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/384217201553545.66768f88b342b.png",
     "tags": [
       "Branding",
@@ -160,10 +160,10 @@
   },
   {
     "id": "music-application",
-    "title": "Music Application",
+    "title": "Audio Streaming UI",
     "behanceId": "140312583",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
+    "subtitle": "A vibrant, engaging mobile music application interface aimed at providing users with an immersive audio discovery experience.",
+    "description": "Rethinking the way we interact with our daily playlists. This conceptual application design emphasizes smooth micro-interactions, bold cover art displays, and a highly accessible player interface that keeps the music front and center.",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/beeb42140312583.623f468d19c79.png",
     "tags": [
       "UI/UX",
@@ -174,31 +174,6 @@
     "link": "https://www.behance.net/gallery/140312583/Music-Application",
     "presentationImages": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/fs/beeb42140312583.623f468d19c79.png"
-    ]
-  },
-  {
-    "id": "mix-redesign",
-    "title": "Mix redesign",
-    "behanceId": "194838401",
-    "subtitle": "A comprehensive design project showcasing modern aesthetics and user-centered design principles.",
-    "description": "This presentation highlights the creative process, UI/UX methodologies, and the systematic design language implemented to achieve a cohesive brand identity and user experience.",
-    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/8c3f98194838401.660306457b361.jpg",
-    "tags": [
-      "UI/UX",
-      "Product Design"
-    ],
-    "year": "2024",
-    "role": "Designer",
-    "link": "https://www.behance.net/gallery/194838401/Mix-redesign",
-    "presentationImages": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/8c3f98194838401.660306457b361.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/503c03194838401.660306457543f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/258df5194838401.66030645782a3.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/43ab8b194838401.6603064579306.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e73cbd194838401.660306457c13e.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/aec06b194838401.660306457a338.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/133114194838401.6603064577263.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c965da194838401.6603064576499.jpg"
     ]
   }
 ]

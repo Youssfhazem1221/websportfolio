@@ -20,6 +20,12 @@ const Projects = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
+  const filterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, staggerChildren: 0.1 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
+  };
+
   const heroProject = filtered[0];
   const gridProjects = filtered.slice(1);
 
@@ -77,10 +83,10 @@ const Projects = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
+            variants={filterVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
             {/* Hero Featured Project */}
             {heroProject && (

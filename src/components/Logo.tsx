@@ -1,0 +1,33 @@
+type Props = {
+  className?: string;
+  /** When set, the mark is filled with the brand gradient using this unique id. Otherwise uses currentColor. */
+  gradientId?: string;
+  title?: string;
+};
+
+export default function Logo({ className, gradientId, title = "Youssf Hazem" }: Props) {
+  const fill = gradientId ? `url(#${gradientId})` : "currentColor";
+  return (
+    <svg
+      viewBox="0 0 396 338"
+      className={className}
+      role="img"
+      aria-label={title}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {gradientId && (
+        <defs>
+          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#ff2e88" />
+            <stop offset="55%" stopColor="#8b5cf6" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+        </defs>
+      )}
+      <g transform="translate(0,338) scale(0.1,-0.1)" fill={fill} stroke="none">
+        <path d="M1644 2873 c-26 -3 -32 -10 -42 -47 -22 -84 -54 -156 -107 -245 l-55 -90 0 -436 0 -435 -305 0 -305 0 0 59 c0 127 48 314 110 428 16 31 29 58 27 60 -2 1 -35 -4 -73 -12 -38 -8 -108 -17 -156 -21 l-88 -7 -19 -52 c-77 -204 -91 -456 -40 -677 l11 -48 419 0 419 0 0 -280 c0 -154 -3 -280 -6 -280 -16 0 -156 77 -209 115 -58 42 -162 142 -205 198 l-21 27 -155 0 c-85 0 -154 -4 -154 -8 0 -19 104 -173 162 -242 196 -228 496 -386 786 -415 l72 -7 0 1211 c0 1147 -1 1211 -17 1209 -10 0 -32 -3 -49 -5z" />
+        <path d="M1837 2874 c-4 -4 -7 -549 -7 -1211 l0 -1203 28 0 c37 0 147 17 200 31 l42 12 0 423 0 424 279 0 280 0 -16 -37 c-42 -102 -102 -196 -177 -279 l-46 -52 0 -166 c0 -91 3 -166 7 -166 11 0 117 83 177 139 179 168 306 397 355 638 16 76 21 139 21 245 0 151 -11 221 -56 369 l-26 86 -91 7 c-50 4 -121 13 -159 21 -38 8 -71 15 -73 15 -2 0 16 -39 40 -87 60 -123 85 -217 92 -351 l6 -112 -304 2 -304 3 -3 438 -2 439 -29 41 c-44 65 -97 176 -121 255 -12 40 -28 72 -35 72 -7 0 -25 3 -41 6 -16 3 -32 2 -37 -2z" />
+      </g>
+    </svg>
+  );
+}

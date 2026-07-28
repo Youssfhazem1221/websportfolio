@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/*  Ink & Cobalt — light editorial. One accent, no gradients.         */
+/* ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* surfaces */
+  --paper: #f4f2ec;
+  --paper-2: #eceae2;
+  --card: #ffffff;
+
+  /* ink */
+  --ink: #16151c;
+  --ink-dim: #57555f;
+  --ink-faint: #918f9b;
+
+  /* the one accent */
+  --accent: #1b45e0;
+  --accent-press: #1233a8;
+  --accent-tint: #e7ebfb;
+
+  /* functional */
+  --green: #1e9e5a;
+
+  --line: rgba(22, 21, 28, 0.12);
+  --line-strong: rgba(22, 21, 28, 0.22);
+
+  /* ---- legacy token names remapped to the new system so existing
+          markup keeps working with the new palette ---- */
+  --bg: var(--paper);
+  --bg-soft: var(--card);
+  --surface: var(--card);
+  --surface-2: var(--paper-2);
+  --border: var(--line);
+  --border-strong: var(--line-strong);
+  --text: var(--ink);
+  --text-dim: var(--ink-dim);
+  --text-faint: var(--ink-faint);
+
+  --pink: var(--accent);
+  --pink-soft: var(--accent);
+  --violet: var(--accent);
+  --violet-soft: var(--accent);
+  --cyan: var(--accent);
+  --amber: var(--ink);
+  --lime: var(--green);
+
+  /* "gradients" are now solid — buttons/clipped-text render as flat color */
+  --grad-hot: var(--accent);
+  --grad-warm: var(--ink);
+  --grad-cool: var(--accent);
+
+  --maxw: 1120px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Helpers                                                           */
+/* ------------------------------------------------------------------ */
+.container-x {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* solid-color "clipped" text — reads as flat accent / ink */
+.grad-text {
+  color: var(--accent);
+}
+.grad-text-warm {
+  color: var(--ink);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(22, 21, 28, 0.04), 0 8px 24px -16px rgba(22, 21, 28, 0.18);
+}
+
+/* framed container with a crisp accent hairline */
+.grad-border {
+  position: relative;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(22, 21, 28, 0.04), 0 20px 50px -30px rgba(27, 69, 224, 0.35);
+}
+.grad-border::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  bottom: 22px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; }
 }

@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Youssf Hazem · portfolio
 
-## Getting Started
+Personal portfolio: shipped products, design case studies, and live GitHub repos.
 
-First, run the development server:
+| | |
+|---|---|
+| Live | https://websportfolio.vercel.app (the Vercel project `youssfhazem` serves the same build at youssfhazem.vercel.app) |
+| Stack | Next.js 16 (App Router), React 19, Tailwind CSS 4, Framer Motion, three.js |
+| Deploys | Every push to `main` deploys through Vercel's GitHub integration |
+
+## Where the content lives
+
+| Section | Source | To change it |
+|---|---|---|
+| Shipped products (Waraqa, MiniBus Egypt) | `src/data/shipped.ts` + images in `public/work/<slug>/` | Add an entry; screenshots as `.webp` |
+| Design case studies | `src/data/projects.ts` + `public/work/<slug>/NN.webp` | Add an entry with its Behance link |
+| GitHub section | **GitHub itself**, read live by `src/lib/github.ts` | See below, no code change |
+| Name, links, CV | `src/lib/site.ts`, `public/Youssf-Hazem-CV.pdf` | Edit the constants |
+
+## GitHub sync
+
+The GitHub section lists every **public, non-fork, non-archived** repo of `Youssfhazem1221` that has the topic **`portfolio`**, newest push first (up to 6).
+
+- **Show a repo:** on its GitHub page → ⚙️ next to *About* → add the topic `portfolio`.
+- **Card text:** the repo's *Description*. The **Live ↗** button: its *Website* field.
+- **Hide a repo:** remove the topic.
+- **When it updates:** the page re-renders at most once an hour (ISR, `revalidate = 3600`). If GitHub is down, the last good version stays up.
+
+Optional env var `GITHUB_TOKEN` (a fine-grained token with public read access only) lifts the GitHub API limit from 60 to 5,000 calls an hour. Not needed at one call an hour.
+
+## Env vars
+
+| Name | Needed? | What |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | No | Canonical URL for share previews, sitemap and robots. Defaults to `https://websportfolio.vercel.app`; set it only when moving to a custom domain |
+| `GITHUB_TOKEN` | No | See GitHub sync |
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build, also checks types
+npm run lint
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

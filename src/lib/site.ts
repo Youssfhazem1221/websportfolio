@@ -1,7 +1,7 @@
-// Central site config. Set NEXT_PUBLIC_SITE_URL at deploy time to the real
-// domain (e.g. https://youssfhazem.com) so OG tags / sitemap use the right host.
+// Central site config. The canonical host for OG tags, sitemap and robots is the
+// live Vercel domain; set NEXT_PUBLIC_SITE_URL only when a custom domain replaces it.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://youssfhazem.pages.dev";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://websportfolio.vercel.app";
 
 export const SITE = {
   name: "Youssf Hazem",

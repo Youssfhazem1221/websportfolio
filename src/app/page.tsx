@@ -8,6 +8,9 @@ import GitHub from "@/components/GitHub";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+// Re-render at most once an hour so the GitHub section picks up repo changes.
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <>

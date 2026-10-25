@@ -4,7 +4,10 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import ProjectModal from "./ProjectModal";
+import ShippedCard from "./ShippedCard";
 import { PROJECTS, type Project } from "@/data/projects";
+import { SHIPPED } from "@/data/shipped";
+import { SITE } from "@/lib/site";
 
 export default function Work() {
   const [active, setActive] = useState<Project | null>(null);
@@ -15,70 +18,17 @@ export default function Work() {
         <SectionHeader
           index="02 — Work"
           title={<>Selected <span className="grad-text">work</span></>}
-          aside="One shipped product, then a few case studies. Click any to see the real screens."
+          aside="Products I built and run, then design case studies. Click any case study to see the real screens."
         />
 
-        {/* Flagship — MiniBus Egypt */}
-        <Reveal delay={0.05}>
-          <div className="grad-border mt-10 overflow-hidden">
-            <div className="grid gap-8 p-7 md:grid-cols-[1.1fr_1fr] md:p-10">
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--paper-2)] px-3 py-1 text-xs font-semibold text-[color:var(--green)]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--green)]" /> Flagship · Shipped
-                  </span>
-                  <span className="rounded-full border border-[color:var(--border)] bg-[color:var(--paper-2)] px-3 py-1 text-xs font-medium text-[color:var(--ink-dim)]">
-                    Next.js · Data
-                  </span>
-                </div>
-                <h3 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-extrabold md:text-4xl">
-                  MiniBus Egypt
-                </h3>
-                <p className="mt-3 max-w-md text-lg font-medium text-[color:var(--ink)]">
-                  Real Cairo transit data → a live, searchable route-finder people actually use.
-                </p>
-                <p className="mt-3 max-w-md leading-relaxed text-[color:var(--text-dim)]">
-                  A route-finder for Cairo&apos;s microbus network. I collected and structured
-                  real transit data — including government PDF line data — into a fast, searchable
-                  app that helps people actually get around the city. Data wrangling, product
-                  design, and shipping, end to end.
-                </p>
-                <ul className="mt-6 flex flex-wrap gap-2 text-xs">
-                  {["Real transit data", "Route search", "Deployed live", "Mobile-first", "Arabic / RTL"].map(
-                    (t) => (
-                      <li
-                        key={t}
-                        className="rounded-full border border-[color:var(--border)] px-3 py-1 text-[color:var(--text-dim)]"
-                      >
-                        {t}
-                      </li>
-                    )
-                  )}
-                </ul>
-                <div className="mt-7">
-                  <a
-                    href="https://busmasr.pages.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[color:var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-press)]"
-                  >
-                    Visit live site
-                    <span aria-hidden>↗</span>
-                  </a>
-                </div>
-              </div>
-
-              <div className="relative min-h-[300px] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-tint)] shadow-[0_24px_60px_-30px_rgba(22,21,28,0.4)]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/work/minibus/app-wide.png"
-                  alt="MiniBus Egypt — live route-finder app"
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        {/* Shipped products: live sites, alternating sides */}
+        <div className="mt-10 flex flex-col gap-8">
+          {SHIPPED.map((item, i) => (
+            <Reveal key={item.slug} delay={0.05}>
+              <ShippedCard item={item} flip={i % 2 === 1} />
+            </Reveal>
+          ))}
+        </div>
 
         {/* Case studies — editorial alternating rows */}
         <div className="mt-8 flex flex-col gap-8">
@@ -128,6 +78,29 @@ export default function Work() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mt-12 text-center text-sm text-[color:var(--text-dim)]">
+            More:{" "}
+            <a
+              href="https://youssf.waraqa.art"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[color:var(--ink)] underline decoration-[color:var(--line-strong)] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:decoration-[color:var(--accent)]"
+            >
+              paper motion films ↗
+            </a>{" "}
+            ·{" "}
+            <a
+              href={SITE.behance}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[color:var(--ink)] underline decoration-[color:var(--line-strong)] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:decoration-[color:var(--accent)]"
+            >
+              all design work on Behance ↗
+            </a>
+          </p>
+        </Reveal>
       </div>
 
       <ProjectModal project={active} onClose={() => setActive(null)} />

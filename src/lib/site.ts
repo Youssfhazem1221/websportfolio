@@ -1,7 +1,7 @@
 // Central site config. The canonical host for OG tags, sitemap and robots is the
-// live Vercel domain; set NEXT_PUBLIC_SITE_URL only when a custom domain replaces it.
+// Cloudflare Pages domain; set NEXT_PUBLIC_SITE_URL only when a custom domain replaces it.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://websportfolio.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://youssfhazem.pages.dev";
 
 export const SITE = {
   name: "Youssf Hazem",

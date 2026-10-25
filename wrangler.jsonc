@@ -1,0 +1,7 @@
+// Cloudflare Pages project (personal account). `npm run deploy` builds out/ and uploads it.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "youssfhazem",
+  "pages_build_output_dir": "./out",
+  "compatibility_date": "2026-10-01"
+}

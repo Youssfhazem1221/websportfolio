@@ -42,3 +42,6 @@ next-env.d.ts
 
 # claude code local state (keeps launch.json, drops agent worktrees)
 /.claude/worktrees/
+
+# wrangler local state
+/.wrangler/

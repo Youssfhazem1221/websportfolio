@@ -1,5 +1,8 @@
 import { ImageResponse } from "next/og";
 
+// Rendered once at build time (the site is a static export).
+export const dynamic = "force-static";
+
 export const alt = "Youssf Hazem — Product analyst who designs & builds";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

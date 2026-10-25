@@ -2,6 +2,7 @@
 // `portfolio` topic on GitHub, so curating the section never needs a code change.
 export const GITHUB_USER = "Youssfhazem1221";
 export const PORTFOLIO_TOPIC = "portfolio";
+export const MAX_REPOS = 6;
 
 export type Repo = {
   name: string;
@@ -28,28 +29,24 @@ type ApiRepo = {
   private: boolean;
 };
 
+const API_URL = `https://api.github.com/users/${GITHUB_USER}/repos?type=owner&sort=pushed&per_page=100`;
+
 const absolute = (url: string | null) =>
   !url ? null : /^https?:\/\//.test(url) ? url : `https://${url}`;
 
-export async function getPortfolioRepos(): Promise<Repo[]> {
-  // Optional: a read-only token lifts the API limit from 60 to 5,000 calls an hour.
-  const token = process.env.GITHUB_TOKEN;
-  const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USER}/repos?type=owner&sort=pushed&per_page=100`,
-    {
-      headers: {
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      },
-      next: { revalidate: 3600 },
-    }
-  );
+/**
+ * Public repos tagged `portfolio`, newest push first. Runs once at build time (so the
+ * cards are in the HTML) and again in each visitor's browser (so they stay current).
+ * The browser call sends no custom headers, which keeps it a simple CORS request.
+ */
+export async function fetchPortfolioRepos(headers: Record<string, string> = {}): Promise<Repo[]> {
+  const res = await fetch(API_URL, { headers: { Accept: "application/vnd.github+json", ...headers } });
   if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
 
   const repos: ApiRepo[] = await res.json();
   return repos
     .filter((r) => !r.private && !r.fork && !r.archived && r.topics?.includes(PORTFOLIO_TOPIC))
+    .slice(0, MAX_REPOS)
     .map((r) => ({
       name: r.name,
       description: r.description ?? "",

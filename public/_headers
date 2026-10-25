@@ -1,0 +1,9 @@
+# Cloudflare Pages headers (copied into out/ by the build)
+
+# The share image is exported without a file extension
+/opengraph-image
+  Content-Type: image/png
+
+# Hashed file names never change, so browsers can keep them for a year
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

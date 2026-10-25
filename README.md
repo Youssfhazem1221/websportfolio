@@ -27,6 +27,7 @@ The GitHub section lists every **public, non-fork, non-archived** repo of `Youss
 - **Card text:** the repo's *Description*. The **Live ↗** button: its *Website* field.
 - **Hide a repo:** remove the topic.
 - **When it updates:** the list is baked into the HTML at build time, then each visitor's browser fetches it again from the GitHub API, so changes show on the next page view. If GitHub is unreachable, the built list stays.
+- **Fresh builds:** `prebuild` clears Next's fetch cache, which would otherwise keep the build-time GitHub answer for a year.
 
 Optional env var `GITHUB_TOKEN` at build time (a fine-grained token with public read access only) lifts the build's API limit from 60 to 5,000 calls an hour. Not needed at one call per build.
 

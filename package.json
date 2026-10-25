@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node -e \"require('fs').rmSync('.next/cache/fetch-cache',{recursive:true,force:true})\"",
     "build": "next build",
     "start": "wrangler pages dev",
     "lint": "eslint",
-    "deploy": "next build && wrangler pages deploy --branch main"
+    "deploy": "npm run build && wrangler pages deploy --branch main"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
